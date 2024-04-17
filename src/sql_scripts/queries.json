@@ -1,0 +1,10 @@
+[
+  {
+    "query": "SELECT * FROM countries",
+    "description": "Retrieve all records from Country table"
+  },
+  {
+    "query": "SELECT * FROM grapes",
+    "description": "Retrieve all records from Grape table"
+  }
+]
