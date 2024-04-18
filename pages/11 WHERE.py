@@ -36,8 +36,8 @@ st.markdown("***")
 col1, col2 = st.columns(spec=2, gap='large')
 
 with col1:
-    if st.button("Previous: RIGHT [OUTER] JOIN"):
-        st.switch_page("pages/10 RIGHT_[OUTER]_JOIN.py")
+    if st.button("Previous: FULL [OUTER] JOIN"):
+        st.switch_page("pages/10 FULL_[OUTER]_JOIN.py")
 with col2:
     if st.button("Next: GROUP BY"):
         st.switch_page("pages/12 GROUP_BY.py")
