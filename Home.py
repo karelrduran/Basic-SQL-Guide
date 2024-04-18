@@ -8,6 +8,7 @@ page_configuration()
 
 # Body Section
 
+
 # Navigation Section
 
 st.markdown("***")

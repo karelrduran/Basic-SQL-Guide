@@ -1,7 +1,7 @@
 import streamlit as st
 
 from page_parts.page_configuration import page_configuration
-from src.data.data_connection import get_data
+from src.data.database_manipulation import get_data, generate_der
 from src.data.query_manipulation import QueryManipulation
 from src.data.str_manipulation import sql_formating
 
@@ -16,13 +16,15 @@ def reformat_text_area():
 
 
 def fill_text_area(code_input: str):
-    # code_input = st.session_state.sql_code_example
     st.session_state.query_str = sql_formating(code_input)
 
 
 # Body Section
+
+generate_der()
+
 with st.expander("Entity Relationship Diagram", expanded=False):
-    st.image('assets/images/DER.png', use_column_width=True)
+    st.image('db/dbschema.png', use_column_width=True)
 
 # Query examples
 query_manipulation = QueryManipulation()
@@ -31,12 +33,13 @@ with st.expander(label="Query examples"):
     with col1:
         selected_query = st.selectbox("Select query", query_manipulation.queries_description())
     with col2:
+        st.write(selected_query)
         st.code(sql_formating(query_manipulation.get_query(selected_query)), language='sql')
         if st.button("Use"):
             fill_text_area(query_manipulation.get_query(selected_query))
 
 # Try your code
-query = st.text_area(key='query_str', label="Try your code:")
+query = st.text_area(key='query_str', label="Try your code:", height=400)
 if st.button("Execute", on_click=reformat_text_area):
     output_table = get_data(query=query)
     if isinstance(output_table, str):
