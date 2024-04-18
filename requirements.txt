@@ -2,3 +2,4 @@ sqlalchemy~=2.0.28
 pandas~=2.2.1
 sqlparse~=0.4.4
 streamlit~=1.32.2
+sqlalchemy_schemadisplay~=2.0
