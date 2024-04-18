@@ -14,8 +14,8 @@ You may query a view just like a table, provided you have SELECT authority on th
 ```sql
 CREATE VIEW redparts
 AS SELECT *
-FROM part
-WHERE color = 'RED'
+   FROM part
+   WHERE color = 'RED'
 ```
 The following query retrieves a subset of column values from this view (the view itself being a subset of the original PART table):
 ```sql

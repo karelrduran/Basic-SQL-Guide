@@ -16,10 +16,10 @@ The following sample query joins the SUBPART table with the result of the outer 
 ```sql
 SELECT product, VALUE(subpart.subpart, partnum) AS partnum, pname, subpart.qty
 FROM subpart LEFT JOIN
-(SELECT VALUE(part.pno, partsupp.pno) AS
-partnum,pname, subpart.qty
-FROM part FULL OUTER JOIN partsupp
-ON part.pno = partsupp.pno) AS temp
+    (SELECT VALUE(part.pno, partsupp.pno) AS partnum,pname, subpart.qty
+     FROM part FULL OUTER JOIN partsupp
+     ON part.pno = partsupp.pno
+    ) AS temp
 ON subpart.subpart = partnum
 ```
 In this example, the correlation name is temp. The optional keyword AS is useful as an eye catcher for the correlation name that follows.

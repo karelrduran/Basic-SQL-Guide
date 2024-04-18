@@ -84,10 +84,10 @@ st.subheader("Select Clause Examples")
 st.markdown("""
 In the sample query statement below, the prefix "part" in front of the CITY column (separated with a period) tells the system to use the CITY column from the PART table, rather than from the SUPPLIER table.
 ```sql
-    SELECT pno, part.city, qty, sname
-    FROM partsupp, supplier, part
-    WHERE part.pno = partsupp.pno
-      AND partsupp.sno = supplier.sno
+SELECT pno, part.city, qty, sname
+FROM partsupp, supplier, part
+WHERE part.pno = partsupp.pno
+  AND partsupp.sno = supplier.sno
 ``` 
 If columns are not prefixed with the name of the owner table, the Server queries the first column with that name that the system encounters.
 
