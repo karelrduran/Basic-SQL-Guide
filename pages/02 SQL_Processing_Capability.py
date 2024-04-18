@@ -83,7 +83,7 @@ By data manipulation, language means:
     - Modification of data in the database. 
 """)
 # Navigation Section
-st.markdown("***")
+st.subheader("", divider='rainbow')
 col1, col2 = st.columns(spec=2, gap='large')
 
 with col1:

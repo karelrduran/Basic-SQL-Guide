@@ -32,7 +32,7 @@ search-condition -- Specifies a predicate (or one or more predicates connected w
 """)
 
 # Navigation Section
-st.markdown("***")
+st.subheader("", divider='rainbow')
 col1, col2 = st.columns(spec=2, gap='large')
 
 with col1:

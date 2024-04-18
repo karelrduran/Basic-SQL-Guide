@@ -172,7 +172,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Navigation Section
-st.markdown("***")
+st.subheader("", divider='rainbow')
 col1, col2 = st.columns(spec=2, gap='large')
 
 with col1:

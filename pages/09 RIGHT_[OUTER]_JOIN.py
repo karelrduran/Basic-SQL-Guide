@@ -24,7 +24,7 @@ Using the RIGHT [OUTER] JOIN syntax includes nonmatched rows from only the joine
 st.image('assets/images/right_join.png')
 
 # Navigation Section
-st.markdown("***")
+st.subheader("", divider='rainbow')
 col1, col2 = st.columns(spec=2, gap='large')
 
 with col1:

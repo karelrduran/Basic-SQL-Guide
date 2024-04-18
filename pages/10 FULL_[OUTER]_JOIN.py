@@ -24,7 +24,7 @@ st.image('assets/images/full_join1.png')
 st.image('assets/images/full_join2.png')
 
 # Navigation Section
-st.markdown("***")
+st.subheader("", divider='rainbow')
 col1, col2 = st.columns(spec=2, gap='large')
 
 with col1:

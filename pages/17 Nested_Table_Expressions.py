@@ -31,7 +31,7 @@ The following restrictions on nested table expressions apply:
 """)
 
 # Navigation Section
-st.markdown("***")
+st.subheader("", divider='rainbow')
 col1, col2 = st.columns(spec=2, gap='large')
 
 with col1:

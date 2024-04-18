@@ -49,7 +49,7 @@ if st.button("Execute", on_click=reformat_text_area):
         st.balloons()
 
 # Navigation Section
-st.markdown("***")
+st.subheader("", divider='rainbow')
 col1, col2 = st.columns(spec=2, gap='large')
 
 with col1:

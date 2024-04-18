@@ -54,7 +54,7 @@ On the other hand, an SQL statement is composed of several clauses, each with a 
 """)
 
 # Navigation Section
-st.markdown("***")
+st.subheader("", divider='rainbow')
 col1, col2 = st.columns(spec=2, gap='large')
 
 with col1:
