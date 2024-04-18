@@ -21,7 +21,7 @@ def fill_text_area(code_input: str):
 
 # Body Section
 
-generate_der()
+# generate_der()
 
 with st.expander("Entity Relationship Diagram", expanded=False):
     st.image('db/dbschema.png', use_column_width=True)
