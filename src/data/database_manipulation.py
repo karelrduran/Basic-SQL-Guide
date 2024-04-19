@@ -9,7 +9,7 @@ def get_data(query: str) -> pd.DataFrame | str:
     try:
         df = pd.read_sql_query(query, conn)
     except Exception as e:
-        return f'<p> <span style="color: red;"> {e} </span>.</p>'
+        return f'<p> <span style="color: red;"> {e} </span></p>'
     finally:
         conn.close()
     return df
