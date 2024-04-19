@@ -3,7 +3,7 @@ import streamlit as st
 
 def page_configuration():
     st.set_page_config(
-        page_title="📔 A basic SQL guide for Data Engineers",
+        page_title="📔 A basic SQL guide",
         page_icon="📔",
         layout="wide",
         initial_sidebar_state='expanded'
