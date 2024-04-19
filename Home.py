@@ -35,7 +35,7 @@ st.subheader("Guide Structure")
 st.markdown("""
 The guide is structured in several sections, each dedicated to a specific SQL topic. We will start with a general introduction to SQL and its processing power. Then, we will explore the different SQL data types and the syntax used to write SQL statements. As we progress, we will dive into more advanced details, such as WHERE, GROUP BY and ORDER BY clauses, as well as the different types of JOIN. 
 
-Finally, we will conclude with a practical section 'Do Yourself' where you will be able to put your knowledge into practice by creating your own code by polling the Vivino database, which was acquired by scraping the vivino.com website, also several sample queries are provided which you can run or modify.
+Finally, we will conclude with a practical section 'Do Yourself' where you will be able to put your knowledge into practice by creating your own code by querying the Vivino database, which was acquired by scraping the vivino.com website, also several sample queries are provided which you can run or modify.
 """)
 
 st.subheader("How to use this guide?")
