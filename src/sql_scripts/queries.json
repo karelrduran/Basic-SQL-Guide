@@ -1,7 +1,7 @@
 [
   {
     "query": "SELECT name\nFROM wines w \nORDER BY ratings_average DESC \nLIMIT 10",
-    "description": "Highlight the wines that have the highest ratings"
+    "description": "Highlight the 10 wines that have the highest ratings"
   },
   {
     "query": "SELECT ROUND(SUM(wn.ratings_average * wn.ratings_count)/SUM(wn.ratings_count),2) AS avg_rating,\nct.name as country\nFROM wines wn\nJOIN regions rg ON wn.region_id = rg.id \nJOIN countries ct ON rg.country_code = ct.code \nGROUP BY ct.name \nORDER BY 1 DESC \nLIMIT 1",
@@ -13,15 +13,15 @@
   },
   {
     "query": "SELECT DISTINCT(w.name) \nFROM keywords_wine kw\nJOIN wines w ON w.id = kw.wine_id \nWHERE keyword_id IN (\n\tSELECT id \n\tFROM keywords\n\tWHERE name IN (\"coffee\", \"toast\", \"green apple\", \"cream\", \"citrus\")) AND count >= 10",
-    "description": "Find the wines that have following keywords in them: coffee, toast, green apple, cream, and citrus; which are confirmed by at least 10 people"
+    "description": "The wines with: coffee, toast, green apple, cream, and citrus keywords; confirmed by at least 10 people"
   },
   {
     "query": "WITH top_grapes AS (\n    SELECT name\n    FROM grapes\n    WHERE id IN (\n    \tSELECT grape_id\n    \tFROM most_used_grapes_per_country\n    \tGROUP BY grape_id  \n    \tORDER BY COUNT(*) DESC\n    \tLIMIT 3)\n)\n\nSELECT *\nFROM (\n    SELECT \n        wn.name AS wine_name,\n        tg.name AS grape_name,\n        RANK() OVER(PARTITION BY tg.name ORDER BY wn.ratings_average DESC) AS wine_rank\n    FROM wines wn\n    JOIN top_grapes tg ON wn.name LIKE '%' || tg.name || '%'\n) ranked_wines\nWHERE wine_rank <= 5;",
-    "description": "to get 3 most used grapes"
+    "description": "Top 3 most common grapes and the 5 best rated wines for each grape"
   },
   {
     "query": "SELECT ROUND(SUM(wn.ratings_average * wn.ratings_count)/SUM(wn.ratings_count),2) AS avg_rating,\nct.name as country\nFROM wines wn\nJOIN regions rg ON wn.region_id = rg.id \nJOIN countries ct ON rg.country_code = ct.code \nGROUP BY ct.name \nORDER BY 1 DESC \nLIMIT 10",
-    "description": "Show the 10 countries that have the biggest average wine rating. It's a weighted average, for correction."
+    "description": "The 10 countries with the highest average wine rating. It's a weighted average, for correction."
   },
   {
     "query": "SELECT ROUND(SUM(vs.ratings_average * vs.ratings_count)/SUM(vs.ratings_count),2) AS avg_rating,\nct.name as country\nFROM vintages vs\nJOIN wines wn ON vs.wine_id = wn.id  \nJOIN regions rg ON wn.region_id = rg.id \nJOIN countries ct ON rg.country_code = ct.code \nGROUP BY ct.name \nORDER BY 1 DESC \nLIMIT 10",
@@ -29,6 +29,6 @@
   },
   {
     "query": "SELECT vs.name AS Name, vs.ratings_average AS rating\nFROM wines wn\nJOIN vintages vs ON wn.id  = vs.wine_id \nWHERE wn.name LIKE \"%Cabernet Sauvignon%\"\nORDER BY vs.ratings_average DESC\nLIMIT 5",
-    "description": "Select the 5 best rated vintages containing Cabernet Sauvignon"
+    "description": "The 5 best rated vintages containing Cabernet Sauvignon"
   }
 ]
